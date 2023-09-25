@@ -7,6 +7,9 @@ import manual
 import sys
 import Ui
 import qdarkstyle
+import flag
+
+Flag = flag.Flag()
 
 class Main(QTabWidget, Ui.Ui_Main):
     def __init__(self, parent=None):
@@ -25,9 +28,11 @@ class Page_Manual(QWidget, Ui.Page_Manual):
     def __init__(self, parent=None):
         super(Page_Manual, self).__init__(parent) # 調用父類把子類對象轉為父類對象
         self.setupUi(self)
+        self.flag = Flag  
         self.Connecting()
     def Connecting(self):
         self.btnConveyerForward.clicked.connect(lambda: manual.ClickConveyerForward(self).action())
+        self.btnConveyerBackward.clicked.connect(lambda: manual.ClickConveyerBackward(self).action())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
