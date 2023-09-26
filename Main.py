@@ -33,6 +33,10 @@ class Page_Manual(QWidget, Ui.Page_Manual):
     def Connecting(self):
         self.btnConveyerForward.clicked.connect(lambda: manual.ClickConveyerForward(self).action())
         self.btnConveyerBackward.clicked.connect(lambda: manual.ClickConveyerBackward(self).action())
+        self.btnConveyerUp.clicked.connect(lambda: manual.ClickConveyerUp(self).action())
+        self.btnConveyerDown.clicked.connect(lambda: manual.ClickConveyerDown(self).action())
+        self.btnBlockUp.clicked.connect(lambda: manual.ClickBlockUp(self).action())
+        self.btnBlockDown.clicked.connect(lambda: manual.ClickBlockDown(self).action())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
